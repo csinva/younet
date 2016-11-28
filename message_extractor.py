@@ -13,6 +13,7 @@ def parse_messages(filepath):
 class MyHTMLParser(HTMLParser):
     set_user = False
     current_user = ""
+    last_user = ""
     set_message = False
 
     def handle_starttag(self, tag, attrs):
@@ -33,11 +34,15 @@ class MyHTMLParser(HTMLParser):
     def handle_data(self, data):
         if self.set_user:
             self.set_user = False
+            self.last_user = self.current_user
             self.current_user = data
             # print("current user:", data)
         elif self.set_message:
             if self.current_user == name:
-                messages.append(data)
+                if self.last_user == name:  # had multiple messages from same person
+                    messages[-1] += " " + data
+                else:
+                    messages.append(data)
             self.set_message = False
             # print("Data     :", data)
 
@@ -61,9 +66,9 @@ class MyHTMLParser(HTMLParser):
 
 if __name__ == "__main__":
     name = "Chandan Singh"
-    # input_file = "data/chandan/messages_readable.html"
+    input_file = "data/chandan/messages_readable.html"
+    # input_file = "data/chandan/html/messages.htm"
     output_file = "data/chandan/messages_out.html"
-    input_file = "data/chandan/html/messages.htm"
     messages = []
     parse_messages(input_file)
     print('writing file...')
