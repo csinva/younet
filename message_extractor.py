@@ -65,9 +65,9 @@ class MyHTMLParser(HTMLParser):
 
 
 if __name__ == "__main__":
-    name = "Chandan Singh"
-    input_file = "data/chandan/messages_readable.html"
-    # input_file = "data/chandan/html/messages.htm"
+    name = "Muthu Chidambaram"
+    # input_file = "data/chandan/messages_readable.html"
+    input_file = "data/chandan/html/messages.htm"
     output_file = "data/chandan/messages_out.html"
     messages = []
     parse_messages(input_file)

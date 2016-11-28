@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>I wonder what Chandan and Muthu are thinking...</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/68b216298f.js"></script>
+</head>
+
+
+<body>
+
+
+<div class="container">
+    <div class="jumbotron" style="text-align:center; background-color:rgba(150, 200, 37, 0.2) !important">
+        <a href="/myapp/list" class="header" style="text-decoration:none;color:black;font-size:3em"> I wonder what Chandan and Muthu are thinking...</a>
+    </div>
+
+    <div class="text-center" style="padding-top:0px">
+        <form method="POST" action="/myapp/search/">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <input type="text" name="textfield" class="form-control" placeholder="Give us a thought...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Go!</button>
+                  </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </form>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{num1}}%">
+        </div>
+        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:{{num2}}%">
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <h1> Here's what we think: </h1>
+        <div class="jumbotron"
+             style="padding-top:5px; padding-left:5px; text-align:left; font-size:.9em; background-color:rgba(0, 50, 150, .2) !important">
+            <a class="header" style="text-decoration:none;color:black;font-size:3em"> {{message }}</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html> 
