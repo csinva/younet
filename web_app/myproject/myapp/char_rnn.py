@@ -40,7 +40,6 @@ for i, sentence in enumerate(sentences):
         X[i, t, char_indices[char]] = 1
     y[i, char_indices[next_chars[i]]] = 1
 
-
 # build the model: a single LSTM
 print('Build model...')
 model = Sequential()
@@ -60,6 +59,7 @@ def sample(preds, temperature=1.0):
     preds = exp_preds / np.sum(exp_preds)
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
+
 
 # train the model, output generated text after each iteration
 for iteration in range(1, 60):
