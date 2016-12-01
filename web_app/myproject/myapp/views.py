@@ -5,6 +5,7 @@ import random
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.core.exceptions import *
+from django.conf import settings
 from keras.models import load_model
 import numpy as np
 import pickle
