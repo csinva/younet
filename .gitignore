@@ -2,3 +2,7 @@ papers
 *Icon*
 *.idea
 data
+*.pyc
+web_app/myproject/*.pyc
+web_app/myproject/myapp/*.pyc
+web_app/myproject/myapp/*pycache*
