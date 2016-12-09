@@ -10,8 +10,8 @@ from keras.models import load_model
 import numpy as np
 import pickle
 
-char_indices = pickle.load(open(settings.PROJECT_ROOT + '/myapp/char_indices_3.p', 'rb'))
-indices_char = pickle.load(open(settings.PROJECT_ROOT + '/myapp/indices_char_3.p', 'rb'))
+# char_indices = pickle.load(open(settings.PROJECT_ROOT + '/myapp/char_indices_3.p', 'rb'))
+# indices_char = pickle.load(open(settings.PROJECT_ROOT + '/myapp/indices_char_3.p', 'rb'))
 # model = load_model(settings.PROJECT_ROOT + '/myapp/char_rnn.h5')
 
 
