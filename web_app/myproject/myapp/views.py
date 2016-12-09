@@ -6,22 +6,22 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.core.exceptions import *
 from django.conf import settings
-from keras.models import load_model
-import numpy as np
-import pickle
+# from keras.models import load_model
+# import numpy as np
+# import pickle
 
 # char_indices = pickle.load(open(settings.PROJECT_ROOT + '/myapp/char_indices_3.p', 'rb'))
 # indices_char = pickle.load(open(settings.PROJECT_ROOT + '/myapp/indices_char_3.p', 'rb'))
 # model = load_model(settings.PROJECT_ROOT + '/myapp/char_rnn.h5')
 
 
-def sample(preds, temperature=1.0):
-    preds = np.asarray(preds).astype('float64')
-    preds = np.log(preds) / temperature
-    exp_preds = np.exp(preds)
-    preds = exp_preds / np.sum(exp_preds)
-    probas = np.random.multinomial(1, preds, 1)
-    return np.argmax(probas)
+# def sample(preds, temperature=1.0):
+#     preds = np.asarray(preds).astype('float64')
+#     preds = np.log(preds) / temperature
+#     exp_preds = np.exp(preds)
+#     preds = exp_preds / np.sum(exp_preds)
+#     probas = np.random.multinomial(1, preds, 1)
+#     return np.argmax(probas)
 
 
 def search(request):
